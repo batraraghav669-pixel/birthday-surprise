@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise ✨</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{height:100vh;overflow:hidden;font-family:Arial,sans-serif;background:#07000d;color:#fff}.scene{height:100vh;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 42%,#5b174f 0,#1c0528 38%,#050007 100%)}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:twinkle 2s infinite alternate}.s1{top:10%;left:12%}.s2{top:18%;left:78%;animation-delay:.3s}.s3{top:32%;left:8%;animation-delay:.7s}.s4{top:12%;left:53%;animation-delay:1s}.s5{top:68%;left:86%;animation-delay:.5s}.s6{top:78%;left:18%;animation-delay:1.2s}.s7{top:52%;left:72%;animation-delay:.2s}.s8{top:27%;left:43%;animation-delay:.8s}.s9{top:88%;left:55%;animation-delay:.4s}.s10{top:42%;left:91%;animation-delay:1.1s}@keyframes twinkle{from{opacity:.15;transform:scale(.6)}to{opacity:1;transform:scale(1.7)}}
+.intro{position:absolute;top:13%;width:100%;text-align:center;animation:fade 1.6s ease}.intro h1{font-size:25px;font-weight:400;letter-spacing:2px}.intro p{margin-top:10px;color:#ead6e8;font-size:14px}.gift-area{position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);text-align:center;transition:1s}.gift{width:120px;height:96px;background:linear-gradient(135deg,#ff5b9b,#c20d54);position:relative;margin:auto;border-radius:9px;box-shadow:0 18px 55px rgba(255,30,130,.45);cursor:pointer;animation:float 2.4s ease-in-out infinite}.gift:before{content:"";position:absolute;width:20px;height:100%;left:50%;transform:translateX(-50%);background:#ffd166}.gift:after{content:"";position:absolute;width:100%;height:18px;top:40%;left:0;background:#ffd166}.lid{position:absolute;width:136px;height:25px;left:-8px;top:-20px;border-radius:7px;background:#ff78b1;transition:.8s;z-index:2}.bow{position:absolute;top:-48px;left:50%;transform:translateX(-50%);font-size:43px;z-index:4}.tap{margin-top:35px;color:#ffd6e8;font-size:14px;animation:pulse 1.5s infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes pulse{50%{opacity:.35}}
+.message{position:absolute;width:90%;max-width:560px;left:50%;top:50%;transform:translate(-50%,-50%) scale(.65);text-align:center;opacity:0;transition:1s}.message.show{transform:translate(-50%,-50%) scale(1);opacity:1}.message h2{font-size:39px;margin-bottom:18px;background:linear-gradient(90deg,#ff76aa,#ffe0ec,#ff76aa);-webkit-background-clip:text;color:transparent}.message p{font-size:17px;line-height:1.75;color:#f8ddea}.heart{font-size:46px;margin-top:20px;animation:heart 1s infinite}@keyframes heart{50%{transform:scale(1.25)}}
+.petal{position:absolute;font-size:26px;pointer-events:none;animation:fall linear forwards}@keyframes fall{0%{transform:translateY(-60px) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(110vh) rotate(480deg);opacity:0}}.hint{position:absolute;bottom:5%;width:100%;text-align:center;color:#bdaabd;font-size:11px;letter-spacing:1px}
+</style></head>
+<body><div class="scene">
+<div class="star s1"></div><div class="star s2"></div><div class="star s3"></div><div class="star s4"></div><div class="star s5"></div><div class="star s6"></div><div class="star s7"></div><div class="star s8"></div><div class="star s9"></div><div class="star s10"></div>
+<div class="intro" id="intro"><h1>Hey... ✨</h1><p>I made a little something for you.</p></div>
+<div class="gift-area" id="giftArea"><div class="gift" onclick="openGift()"><div class="bow">🎀</div><div class="lid" id="lid"></div></div><div class="tap">Tap the gift 🎁</div></div>
+<div class="message" id="message"><h2>Happy Birthday! 🎂</h2><p>Wishing you a day full of smiles, happiness and beautiful little moments. ✨<br><br>Keep smiling, keep shining, and stay exactly the way you are. 🌸<br><br>Hope this tiny surprise made you smile. ❤️</p><div class="heart">❤️</div></div>
+<div class="hint">made with a little bit of code & a lot of good wishes</div>
+</div>
+<script>
+function openGift(){document.getElementById('intro').style.opacity='0';document.getElementById('lid').style.transform='translateY(-45px) rotate(-8deg)';setTimeout(()=>document.getElementById('giftArea').style.opacity='0',450);setTimeout(()=>{document.getElementById('message').classList.add('show');petals()},800)}
+function petals(){const items=['🌸','🌷','💖','✨','🌹','💕'];for(let i=0;i<42;i++){let p=document.createElement('div');p.className='petal';p.textContent=items[Math.floor(Math.random()*items.length)];p.style.left=Math.random()*100+'vw';p.style.animationDuration=(3+Math.random()*4)+'s';p.style.animationDelay=Math.random()*1.8+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),8500)}}
+</script></body></html>
